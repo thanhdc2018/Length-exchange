@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Length-exchange</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><input id="in"></td>
+        <td><select id="selection">
+            <option value="0.305">meter to foot</option>
+            <option value="3.279">foot to meter</option>
+        </select></td>
+        <td><button type="button" onclick="convert()">Chuyển Đổi</button> </td>
+    </tr>
+</table>
+<table border="1" style="width: 360px; height: 30px">
+    <tr>
+        <td>
+            <output id="out"></output>
+        </td>
+    </tr>
+</table>
+<script>
+    function convert() {
+        let inputvalue = Number(document.getElementById("in").value);
+        let convertindex = document.getElementById("selection").selectedIndex;
+        let convertvalue = document.getElementById("selection")[convertindex].value;
+        document.getElementById("out").innerHTML = (inputvalue * convertvalue);
+    }
+</script>
+</body>
+</html>
